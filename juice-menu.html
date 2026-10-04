@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pandit Ji Shakes &amp; Juice Corner - Menu and Pre-book</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfaf6;--card:#fff;--ink:#1d2a22;--mute:#5d6b62;--line:#e4e2d8;--ac:#e8590c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a16;--card:#1d2620;--ink:#eef3ee;--mute:#a3b0a6;--line:#2e3a32}}
+:root[data-theme="dark"]{--bg:#141a16;--card:#1d2620;--ink:#eef3ee;--mute:#a3b0a6;--line:#2e3a32}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 'Nunito Sans',system-ui,sans-serif;padding-bottom:90px}
+h1,h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;margin:0}
+header{padding:20px 16px 8px;max-width:640px;margin:0 auto}
+h1{font-size:28px;font-weight:800}
+.free{display:inline-block;margin-top:8px;padding:6px 12px;border-radius:99px;background:var(--ac);color:#fff;font-weight:700;font-size:14px}
+nav{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;max-width:640px;margin:0 auto;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+nav button{flex:none;border:2px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:99px;font:700 14px 'Nunito Sans',sans-serif;cursor:pointer}
+nav button[aria-selected=true]{background:var(--ac);border-color:var(--ac);color:#fff}
+main{max-width:640px;margin:0 auto;padding:0 16px}
+.tag{color:var(--mute);margin:4px 0 12px}
+.note{border-left:5px solid var(--ac);background:var(--card);padding:10px 12px;border-radius:0 10px 10px 0;margin-bottom:12px;font-size:14px}
+.item{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}
+.item div.t{flex:1}.item b{display:block}.item small{color:var(--mute)}
+.pr{font-weight:800;color:var(--ac);min-width:48px;text-align:right}
+.q{display:flex;align-items:center;gap:8px}
+.q button{width:34px;height:34px;border-radius:50%;border:2px solid var(--ac);background:none;color:var(--ac);font-size:20px;font-weight:800;cursor:pointer}
+.q span{min-width:18px;text-align:center;font-weight:700}
+#bar{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line);display:none;z-index:9}
+#bar button{width:100%;max-width:640px;display:block;margin:0 auto;padding:14px;border:0;border-radius:12px;background:var(--ac);color:#fff;font:800 16px 'Nunito Sans',sans-serif;cursor:pointer}
+#ck{display:none;margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+#ck label{display:block;font-weight:700;margin:10px 0 4px;font-size:14px}
+#ck input,#ck select,#ck textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+#sum{font-size:14px;color:var(--mute);margin:8px 0}
+#go{margin-top:12px;width:100%;padding:14px;border:0;border-radius:12px;background:#1f9d55;color:#fff;font:800 16px 'Nunito Sans',sans-serif;cursor:pointer}
+footer{max-width:640px;margin:20px auto;padding:0 16px;color:var(--mute);font-size:13px}
+</style></head><body>
+<header><h1 id="shop">Pandit Ji Shakes &amp; Juice Corner</h1><div class="free">Free delivery within 1 km</div></header>
+<nav id="tabs" role="tablist"></nav>
+<main><h2 id="mt"></h2><p class="tag" id="mg"></p><div id="nt"></div><div id="list"></div>
+<section id="ck"><h2>Pre-book your order</h2><div id="sum"></div>
+<label for="nm">Name</label><input id="nm" autocomplete="name">
+<label for="ad">Address or landmark (gym, school, camp gate)</label><input id="ad">
+<label for="sl">Pickup or delivery time</label>
+<select id="sl"><option>As soon as possible</option><option>6:00-8:00 am</option><option>8:00-10:00 am</option><option>10:00 am-12:00 pm</option><option>12:00-2:00 pm</option><option>2:00-4:00 pm</option><option>4:00-6:00 pm</option><option>6:00-8:00 pm</option><option>8:00-10:00 pm</option></select>
+<label for="md">Pickup or delivery</label><select id="md"><option>Delivery (free within 1 km)</option><option>I will pick up</option></select>
+<label for="rm">Special request</label><textarea id="rm" rows="2" placeholder="Less sugar, no ice, extra protein"></textarea>
+<button id="go">Send order on WhatsApp</button>
+<div id="fb" style="display:none;margin-top:12px"><p style="margin:0 0 8px"><b>Last step:</b> in WhatsApp, tap the green Send button. The shop gets your order only after you send it.</p><a id="fl" target="_blank" rel="noopener" style="display:block;text-align:center;padding:12px;border-radius:12px;background:#1f9d55;color:#fff;font-weight:800;text-decoration:none">WhatsApp did not open? Tap here</a><p class="mute" style="margin:10px 0 4px;font-size:13px">Or copy your order and send it to 7060864867:</p><textarea id="fm" rows="6" readonly></textarea><button id="cp" style="margin-top:8px;padding:10px;border:2px solid var(--ac);background:none;color:var(--ac);border-radius:10px;font-weight:700;cursor:pointer">Copy order</button></div></section></main>
+<footer>Fresh fruit, made when you order. Prices in rupees.</footer>
+<div id="bar"><button id="cb"></button></div>
+<script>
+// EDIT THESE TWO LINES: shop name and WhatsApp number with country code, no + or spaces
+var SHOP="Pandit Ji Shakes & Juice Corner", PHONE="917060864867";
+var G=[
+{id:"gym",n:"Gym",c:"#e8590c",t:"Protein shakes for training",nt:"Add an extra whey scoop to any shake for Rs 100. Pre-book so it is ready when you finish.",i:[["Banana peanut butter shake","Banana, peanut butter, milk",100],["Oats banana shake","Oats, banana, milk, dates",90],["Dry fruit power shake","Almond, cashew, dates, milk",130],["Chocolate protein shake","Cocoa, banana, milk",100],["Post-workout fruit bowl","Seasonal fruit, no sugar",70],["Extra whey scoop","Add to any shake",100]]},
+{id:"school",n:"School kids",c:"#1c7ed6",t:"Cool treats for school time",nt:"Made with real fruit and milk. Pack of 4 for class or birthday: ask us.",i:[["Mango shake","Fresh mango, milk",50],["Chocolate shake","Chocolate, milk",50],["Strawberry shake","Strawberry, milk",50],["Fruit cup","Cut fruit, chaat masala optional",30],["Orange juice (small)","Fresh squeezed",40],["Shake + fruit cup combo","Any shake with a fruit cup",70]]},
+{id:"library",n:"Library",c:"#7048e8",t:"Study break combos",nt:"Show your library or student ID for Rs 5 off on the combo.",i:[["Cold coffee","Chilled, milk-based",60],["Banana shake","Banana, milk, honey",50],["Mosambi juice","Fresh, no ice option",50],["Lemon mint cooler","Light and refreshing",30],["Shake + fruit cup combo","Study break special",85],["Dry fruit shake","Keeps you going for hours",120]]},
+{id:"force",n:"Camp and duty",c:"#5c7c2f",t:"Cool, filling and energising",nt:"Bulk and monthly packs delivered to the camp gate. Call or message to book.",i:[["Sweet lassi","Thick, chilled",40],["Sugarcane juice","Fresh pressed",30],["Watermelon juice","Cold and hydrating",40],["Nimbu pani with salt","Electrolyte drink",25],["Energy shake","Banana, dates, milk, nuts",90],["Squad pack: 10 lassi","Delivered to the gate",380]]},
+{id:"her",n:"Beauty: women",c:"#d6336c",t:"Fresh drinks for glowing skin, hair and nails",nt:"Natural fruit, vegetable and nut drinks to go with a healthy routine. Results vary, and this is not a medicine or treatment. Drink plenty of water too.",i:[["Carrot beet amla","Bright and tangy",60],["Pomegranate juice","Fresh pressed",120],["Orange papaya","Vitamin C blend",70],["Cucumber mint cooler","Cooling and light",50],["Almond saffron shake","Almond, saffron, milk",120],["Amla aloe juice","Tangy, no added sugar",60]]},
+{id:"him",n:"Beauty: men",c:"#364fc7",t:"Fresh drinks for clear skin and strong hair",nt:"Natural drinks to go with a healthy routine. Results vary, and this is not a medicine or treatment. Drink plenty of water too.",i:[["Amla ginger shot","Small and strong",40],["ABC juice","Apple, beet, carrot",80],["Spinach apple green juice","Iron-rich greens",80],["Walnut date shake","Walnut, dates, milk",130],["Tomato carrot juice","Fresh, no added sugar",60],["Watermelon mint","Cold and hydrating",45]]},
+{id:"health",n:"Health",c:"#2b8a3e",t:"Healthy juices and shakes",nt:"Sugar-free on request. Tell us your preference when ordering.",i:[["Green detox","Cucumber, spinach, apple, lemon",80],["ABC juice","Apple, beet, carrot",80],["Mixed fruit juice","No added sugar",70],["Papaya shake","Papaya, milk, no sugar",60],["Dates milkshake","Dates, milk, no added sugar",75],["Coconut water","Fresh tender coconut",60]]},
+{id:"senior",n:"Seniors",c:"#0c8599",t:"Gentle, easy-to-drink options",nt:"All items come with no ice and no added sugar by default. If you have diabetes or a health condition, check with your doctor first.",i:[["Papaya smoothie","Soft, light, no sugar",60],["Pomegranate juice","Fresh, no ice",120],["Banana dates shake","Soft, no added sugar",70],["Warm turmeric milk","Warm, mild",40],["Tender coconut water","Fresh and light",60],["Mosambi juice","Fresh, no ice",50]]}];
+var cur=G[0],cart={};
+var $=function(i){return document.getElementById(i)};
+function tab(id){cur=G.filter(function(g){return g.id==id})[0]||G[0];
+ document.documentElement.style.setProperty("--ac",cur.c);
+ $("tabs").innerHTML=G.map(function(g){return '<button role="tab" aria-selected="'+(g.id==cur.id)+'" onclick="location.hash=\''+g.id+'\'">'+g.n+'</button>'}).join("");
+ $("mt").textContent=cur.n+" menu";$("mg").textContent=cur.t;$("nt").innerHTML='<div class="note">'+cur.nt+'</div>';draw()}
+function draw(){$("list").innerHTML=cur.i.map(function(x,k){var key=cur.id+k,q=cart[key]||0;
+ return '<div class="item"><div class="t"><b>'+x[0]+'</b><small>'+x[1]+'</small></div><div class="pr">Rs '+x[2]+'</div><div class="q"><button aria-label="Remove one" onclick="ch(\''+key+'\',-1)">-</button><span>'+q+'</span><button aria-label="Add one" onclick="ch(\''+key+'\',1)">+</button></div></div>'}).join("");bar()}
+function rows(){var r=[];G.forEach(function(g){g.i.forEach(function(x,k){var q=cart[g.id+k];if(q)r.push({n:x[0],g:g.n,q:q,p:x[2]})})});return r}
+function ch(k,d){cart[k]=Math.max(0,(cart[k]||0)+d);draw()}
+function bar(){var r=rows(),n=0,t=0;r.forEach(function(x){n+=x.q;t+=x.q*x.p});
+ $("bar").style.display=n?"block":"none";$("cb").textContent="Review order: "+n+" items, Rs "+t;
+ $("ck").style.display=n?"block":"none";
+ $("sum").innerHTML=r.map(function(x){return x.q+" x "+x.n+" = Rs "+x.q*x.p}).join("<br>")+"<br><b>Total Rs "+t+"</b>"}
+$("cb").onclick=function(){$("ck").scrollIntoView({behavior:"smooth"})};
+$("go").onclick=function(){var r=rows(),t=0;if(!r.length)return;
+ var m="New order - "+SHOP+"\n";r.forEach(function(x){t+=x.q*x.p;m+=x.q+" x "+x.n+" ("+x.g+") Rs "+x.q*x.p+"\n"});
+ m+="Total: Rs "+t+"\nName: "+$("nm").value+"\nAddress: "+$("ad").value+"\nTime: "+$("sl").value+"\nMode: "+$("md").value;
+ if($("rm").value)m+="\nNote: "+$("rm").value;
+ var u="https://wa.me/"+PHONE+"?text="+encodeURIComponent(m);
+ try{window.open(u,"_blank")}catch(e){}
+ $("fb").style.display="block";$("fl").href=u;$("fm").value=m};
+$("cp").onclick=function(){var t=$("fm");t.select();try{navigator.clipboard.writeText(t.value)}catch(e){document.execCommand("copy")}$("cp").textContent="Copied"};
+$("shop").textContent=SHOP;
+window.onhashchange=function(){tab(location.hash.slice(1))};tab(location.hash.slice(1));
+</script></body></html>
