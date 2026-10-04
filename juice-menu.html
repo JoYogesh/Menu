@@ -2,41 +2,45 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pandit Ji Shakes &amp; Juice Corner - Menu and Pre-book</title>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@500;700&family=Lora:wght@700&family=Oswald:wght@500;700&family=Playfair+Display:wght@700&family=Manrope:wght@500;800&family=Poppins:wght@500;700&family=Merriweather:wght@700&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fbfaf6;--card:#fff;--ink:#1d2a22;--mute:#5d6b62;--line:#e4e2d8;--ac:#e8590c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a16;--card:#1d2620;--ink:#eef3ee;--mute:#a3b0a6;--line:#2e3a32}}
-:root[data-theme="dark"]{--bg:#141a16;--card:#1d2620;--ink:#eef3ee;--mute:#a3b0a6;--line:#2e3a32}
+:root{--bg:#fbfaf6;--card:#fff;--ink:#1d2a22;--mute:#5d6b62;--line:#e4e2d8;--ac:#e8590c;--ai:#fff;--hero:#e8590c;--hi:#fff;--hf:'Poppins',sans-serif;--hw:700;--r:14px;--fs:16px;--bf:'Nunito Sans',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 'Nunito Sans',system-ui,sans-serif;padding-bottom:90px}
-h1,h2{font-family:'Bricolage Grotesque',system-ui,sans-serif;margin:0}
-header{padding:20px 16px 8px;max-width:640px;margin:0 auto}
-h1{font-size:28px;font-weight:800}
-.free{display:inline-block;margin-top:8px;padding:6px 12px;border-radius:99px;background:var(--ac);color:#fff;font-weight:700;font-size:14px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--bf);font-size:var(--fs);line-height:1.45;padding-bottom:90px;transition:background .3s}
+h1,h2{font-family:var(--hf);font-weight:var(--hw);margin:0}
+#hero{position:relative;overflow:hidden;background:var(--hero);color:var(--hi);padding:20px 16px 24px;border-radius:0 0 calc(var(--r)*1.6) calc(var(--r)*1.6)}
+#dc span{position:absolute;font-size:64px;opacity:.28;line-height:1;pointer-events:none}
+.hin{position:relative;max-width:640px;margin:0 auto}
+h1{font-size:20px;opacity:.9}
+.hi2{font-size:14px;opacity:.85;margin-top:2px}
+#mt{font-size:38px;line-height:1.1;margin-top:14px}
+.tag{margin:6px 0 0;font-size:calc(var(--fs) + 1px)}
+.free{display:inline-block;margin-top:12px;padding:6px 14px;border-radius:99px;background:var(--ac);color:var(--ai);font-weight:700;font-size:14px;box-shadow:0 2px 0 rgba(0,0,0,.2)}
 nav{display:flex;gap:8px;overflow-x:auto;padding:12px 16px;max-width:640px;margin:0 auto;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
-nav button{flex:none;border:2px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:99px;font:700 14px 'Nunito Sans',sans-serif;cursor:pointer}
-nav button[aria-selected=true]{background:var(--ac);border-color:var(--ac);color:#fff}
+nav button{flex:none;border:2px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:99px;font:700 14px var(--bf);cursor:pointer}
+nav button[aria-selected=true]{background:var(--ac);border-color:var(--ac);color:var(--ai)}
 main{max-width:640px;margin:0 auto;padding:0 16px}
-.tag{color:var(--mute);margin:4px 0 12px}
-.note{border-left:5px solid var(--ac);background:var(--card);padding:10px 12px;border-radius:0 10px 10px 0;margin-bottom:12px;font-size:14px}
-.item{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}
-.item div.t{flex:1}.item b{display:block}.item small{color:var(--mute)}
-.pr{font-weight:800;color:var(--ac);min-width:48px;text-align:right}
+.note{border-left:5px solid var(--ac);background:var(--card);padding:10px 12px;border-radius:0 var(--r) var(--r) 0;margin-bottom:12px;font-size:14px}
+.item{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px;margin-bottom:10px}
+.em{flex:none;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;background:color-mix(in srgb,var(--ac) 20%,transparent)}
+.item div.t{flex:1}.item b{display:block}.item small{color:var(--mute);font-size:calc(var(--fs) - 2px)}
+.pr{font-weight:800;color:var(--ac);min-width:52px;text-align:right}
 .q{display:flex;align-items:center;gap:8px}
-.q button{width:34px;height:34px;border-radius:50%;border:2px solid var(--ac);background:none;color:var(--ac);font-size:20px;font-weight:800;cursor:pointer}
+.q button{width:36px;height:36px;border-radius:50%;border:2px solid var(--ac);background:none;color:var(--ac);font-size:20px;font-weight:800;cursor:pointer}
 .q span{min-width:18px;text-align:center;font-weight:700}
 #bar{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line);display:none;z-index:9}
-#bar button{width:100%;max-width:640px;display:block;margin:0 auto;padding:14px;border:0;border-radius:12px;background:var(--ac);color:#fff;font:800 16px 'Nunito Sans',sans-serif;cursor:pointer}
-#ck{display:none;margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+#bar button{width:100%;max-width:640px;display:block;margin:0 auto;padding:14px;border:0;border-radius:var(--r);background:var(--ac);color:var(--ai);font:800 16px var(--bf);cursor:pointer}
+#ck{display:none;margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px}
 #ck label{display:block;font-weight:700;margin:10px 0 4px;font-size:14px}
 #ck input,#ck select,#ck textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
 #sum{font-size:14px;color:var(--mute);margin:8px 0}
-#go{margin-top:12px;width:100%;padding:14px;border:0;border-radius:12px;background:#1f9d55;color:#fff;font:800 16px 'Nunito Sans',sans-serif;cursor:pointer}
+#go{margin-top:12px;width:100%;padding:14px;border:0;border-radius:var(--r);background:#1f9d55;color:#fff;font:800 16px var(--bf);cursor:pointer}
+.mute{color:var(--mute)}
 footer{max-width:640px;margin:20px auto;padding:0 16px;color:var(--mute);font-size:13px}
 </style></head><body>
-<header><h1 id="shop">Pandit Ji Shakes &amp; Juice Corner</h1><div class="free">Free delivery within 1 km</div></header>
+<header id="hero"><div id="dc"></div><div class="hin"><h1 id="shop">Pandit Ji Shakes &amp; Juice Corner</h1><div class="hi2">जूस • शेक • फ्रूट चाट</div><h2 id="mt"></h2><p class="tag" id="mg"></p><div class="free">Free delivery within 1 km</div></div></header>
 <nav id="tabs" role="tablist"></nav>
-<main><h2 id="mt"></h2><p class="tag" id="mg"></p><div id="nt"></div><div id="list"></div>
+<main><div id="nt" style="margin-top:6px"></div><div id="list"></div>
 <section id="ck"><h2>Pre-book your order</h2><div id="sum"></div>
 <label for="nm">Name</label><input id="nm" autocomplete="name">
 <label for="ad">Address or landmark (gym, school, camp gate)</label><input id="ad">
@@ -62,12 +66,24 @@ var G=[
 {id:"senior",n:"Seniors",c:"#0c8599",t:"Gentle, easy-to-drink options",nt:"All items come with no ice and no added sugar by default. If you have diabetes or a health condition, check with your doctor first.",i:[["Papaya smoothie","Soft, light, no sugar",60],["Pomegranate juice","Fresh, no ice",120],["Banana dates shake","Soft, no added sugar",70],["Warm turmeric milk","Warm, mild",40],["Tender coconut water","Fresh and light",60],["Mosambi juice","Fresh, no ice",50]]}];
 var cur=G[0],cart={};
 var $=function(i){return document.getElementById(i)};
-function tab(id){cur=G.filter(function(g){return g.id==id})[0]||G[0];
- document.documentElement.style.setProperty("--ac",cur.c);
+var T={
+gym:{bg:"#14100e",card:"#211a16",ink:"#fff3e8",mute:"#c4b2a2",line:"#382d26",ac:"#ff6a1f",hero:"linear-gradient(135deg,#2a1306,#8a3208)",hi:"#fff",hf:"'Anton',sans-serif",hw:400,r:"8px",e:["💪","🍌","🥜","🥛","🍫","🏋️"]},
+school:{bg:"#eaf6ff",card:"#fff",ink:"#12324d",mute:"#50708a",line:"#cfe6f7",ac:"#1c7ed6",hero:"linear-gradient(135deg,#74c0fc,#ffe066)",hi:"#0b2540",hf:"'Fredoka',sans-serif",bf:"'Fredoka',sans-serif",hw:700,r:"22px",e:["🍓","🥤","🍫","🍊","🍌","🍧"]},
+library:{bg:"#f4f0fa",card:"#fff",ink:"#2b2140",mute:"#6b5f82",line:"#ddd3ee",ac:"#6741d9",hero:"linear-gradient(135deg,#e5dbff,#c5b3f5)",hi:"#2b2140",hf:"'Lora',serif",hw:700,r:"10px",e:["📚","☕","🍌","🍋","🍊","🥛"]},
+force:{bg:"#151a10",card:"#222a18",ink:"#eef2e0",mute:"#b3bf9a",line:"#39452a",ac:"#9bc53d",ai:"#11160a",hero:"linear-gradient(135deg,#2d3a17,#59702a)",hi:"#fff",hf:"'Oswald',sans-serif",hw:700,r:"4px",e:["🎖️","🥛","🍉","🍋","🥤","🍌"]},
+her:{bg:"#fff1f5",card:"#fff",ink:"#4a1d2f",mute:"#8a5a6c",line:"#f7d3df",ac:"#d6336c",hero:"linear-gradient(135deg,#ffc2d6,#ffe3ec)",hi:"#4a1d2f",hf:"'Playfair Display',serif",hw:700,r:"18px",e:["🌸","🍑","🥕","🍊","🥒","🍓"]},
+him:{bg:"#0f1626",card:"#18223a",ink:"#e8eefc",mute:"#9fb0d3",line:"#2a3858",ac:"#5c7cfa",hero:"linear-gradient(135deg,#1b2a5a,#364fc7)",hi:"#fff",hf:"'Manrope',sans-serif",hw:800,r:"12px",e:["🥕","🍅","🥬","🍉","🌰","🍎"]},
+health:{bg:"#effaf0",card:"#fff",ink:"#12301a",mute:"#4f7a5a",line:"#cfe9d3",ac:"#2b8a3e",hero:"linear-gradient(135deg,#b2f2bb,#69db7c)",hi:"#0d2a14",hf:"'Poppins',sans-serif",hw:700,r:"16px",e:["🥬","🍏","🥕","🥒","🥥","🍊"]},
+senior:{bg:"#fffaf0",card:"#fff",ink:"#1f1a14",mute:"#5a4d3a",line:"#e6d9bf",ac:"#0b7285",hero:"linear-gradient(135deg,#ffe8cc,#fff3bf)",hi:"#1f1a14",hf:"'Merriweather',serif",hw:700,r:"14px",fs:"19px",e:["🥥","🍵","🍌","🍊","🍎","🥛"]}};
+var POS=[[6,10,-14],[70,6,12],[32,58,8],[84,50,-10],[50,-6,16],[-2,70,-6]];
+function tab(id){cur=G.filter(function(g){return g.id==id})[0]||G[0];var t=T[cur.id],s=document.documentElement.style;
+ s.setProperty("--bg",t.bg);s.setProperty("--card",t.card);s.setProperty("--ink",t.ink);s.setProperty("--mute",t.mute);s.setProperty("--line",t.line);s.setProperty("--ac",t.ac);s.setProperty("--ai",t.ai||"#fff");s.setProperty("--hero",t.hero);s.setProperty("--hi",t.hi);s.setProperty("--hf",t.hf);s.setProperty("--hw",t.hw);s.setProperty("--r",t.r);s.setProperty("--fs",t.fs||"16px");s.setProperty("--bf",t.bf||"'Nunito Sans',system-ui,sans-serif");
  $("tabs").innerHTML=G.map(function(g){return '<button role="tab" aria-selected="'+(g.id==cur.id)+'" onclick="location.hash=\''+g.id+'\'">'+g.n+'</button>'}).join("");
+ $("hero").style.color=t.hi;
+ $("dc").innerHTML=t.e.map(function(e,i){return '<span style="left:'+POS[i][0]+'%;top:'+POS[i][1]+'%;transform:rotate('+POS[i][2]+'deg)">'+e+'</span>'}).join("");
  $("mt").textContent=cur.n+" menu";$("mg").textContent=cur.t;$("nt").innerHTML='<div class="note">'+cur.nt+'</div>';draw()}
-function draw(){$("list").innerHTML=cur.i.map(function(x,k){var key=cur.id+k,q=cart[key]||0;
- return '<div class="item"><div class="t"><b>'+x[0]+'</b><small>'+x[1]+'</small></div><div class="pr">Rs '+x[2]+'</div><div class="q"><button aria-label="Remove one" onclick="ch(\''+key+'\',-1)">-</button><span>'+q+'</span><button aria-label="Add one" onclick="ch(\''+key+'\',1)">+</button></div></div>'}).join("");bar()}
+function draw(){var t=T[cur.id];$("list").innerHTML=cur.i.map(function(x,k){var key=cur.id+k,q=cart[key]||0;
+ return '<div class="item"><div class="em">'+t.e[k%t.e.length]+'</div><div class="t"><b>'+x[0]+'</b><small>'+x[1]+'</small></div><div class="pr">Rs '+x[2]+'</div><div class="q"><button aria-label="Remove one" onclick="ch(\''+key+'\',-1)">-</button><span>'+q+'</span><button aria-label="Add one" onclick="ch(\''+key+'\',1)">+</button></div></div>'}).join("");bar()}
 function rows(){var r=[];G.forEach(function(g){g.i.forEach(function(x,k){var q=cart[g.id+k];if(q)r.push({n:x[0],g:g.n,q:q,p:x[2]})})});return r}
 function ch(k,d){cart[k]=Math.max(0,(cart[k]||0)+d);draw()}
 function bar(){var r=rows(),n=0,t=0;r.forEach(function(x){n+=x.q;t+=x.q*x.p});
